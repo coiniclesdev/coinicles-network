@@ -7,4 +7,4 @@ if( -not ( Test-Path $env:APPDATA\.coiniclesnet -PathType Container ) )
 }
 
 
-$web.DownloadFile("https://seeds.coinicles.tech/coiniclesnet.signed", "$env:APPDATA\.coiniclesnet\bootstrap.signed")
+$web.DownloadFile("https://site.coinicles.tech/coiniclesnet.signed", "$env:APPDATA\.coiniclesnet\bootstrap.signed")

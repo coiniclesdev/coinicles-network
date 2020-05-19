@@ -121,7 +121,7 @@ endif(XSAN)
 
 if(CMAKE_BUILD_TYPE MATCHES "[Dd][Ee][Bb][Uu][Gg]")
   set(OPTIMIZE_FLAGS "")
-  add_definitions(-DLOKINET_DEBUG=1)
+  add_definitions(-DCOINICLESNET_DEBUG=1)
   set(CRYPTO_FLAGS "")
   add_compile_options( ${DEBUG_FLAGS} )
   link_libraries( ${DEBUG_FLAGS} )

@@ -1,5 +1,5 @@
-#ifndef LOKINET_JNI_COMMON_HPP
-#define LOKINET_JNI_COMMON_HPP
+#ifndef COINICLESNET_JNI_COMMON_HPP
+#define COINICLESNET_JNI_COMMON_HPP
 
 #include <jni.h>
 #include <util/string_view.hpp>

@@ -2,4 +2,4 @@ Coiniclesnet is the reference implementation of LLARP (low latency anonymous rou
 
 This installer provides the needed control panel to get up an running on Coiniclesnet.
 
-You can view additional documentation and information on Coiniclesnet at https://coiniclesnet.org
+You can view additional documentation and information on Coiniclesnet at https://coinicles.tech

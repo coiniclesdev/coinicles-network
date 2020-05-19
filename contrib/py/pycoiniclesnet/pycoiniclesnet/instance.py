@@ -116,39 +116,39 @@ def getconf(name, fallback=None):
 
 
 def run_main(args):
-    seedfile = getconf("LOKI_SEED_FILE")
+    seedfile = getconf("COINICLES_SEED_FILE")
     if seedfile is None:
-        print("LOKI_SEED_FILE was not set")
+        print("COINICLES_SEED_FILE was not set")
         return
 
-    coiniclesd_host = getconf("LOKI_RPC_HOST", "127.0.0.1")
-    coiniclesd_port = getconf("LOKI_RPC_PORT", "22023")
+    coiniclesd_host = getconf("COINICLES_RPC_HOST", "127.0.0.1")
+    coiniclesd_port = getconf("COINICLES_RPC_PORT", "22023")
 
-    root = getconf("LOKINET_ROOT")
+    root = getconf("COINICLESNET_ROOT")
     if root is None:
-        print("LOKINET_ROOT was not set")
+        print("COINICLESNET_ROOT was not set")
         return
 
-    rc_callback = getconf("LOKINET_SUBMIT_URL")
+    rc_callback = getconf("COINICLESNET_SUBMIT_URL")
     if rc_callback is None:
-        print("LOKINET_SUBMIT_URL was not set")
+        print("COINICLESNET_SUBMIT_URL was not set")
         return
 
-    bootstrap = getconf("LOKINET_BOOTSTRAP_URL")
+    bootstrap = getconf("COINICLESNET_BOOTSTRAP_URL")
     if bootstrap is None:
-        print("LOKINET_BOOTSTRAP_URL was not set")
+        print("COINICLESNET_BOOTSTRAP_URL was not set")
 
-    lib = getconf("LOKINET_LIB", lib_file)
+    lib = getconf("COINICLESNET_LIB", lib_file)
     if not os.path.exists(lib):
         lib = "libcoiniclesnet-shared.so"
-    timeout = int(getconf("LOKINET_TIMEOUT", "5"))
-    ping_interval = int(getconf("LOKINET_PING_INTERVAL", "60"))
-    ping_callback = getconf("LOKINET_PING_URL")
-    ip = getconf("LOKINET_IP")
-    port = getconf("LOKINET_PORT")
-    ifname = getconf("LOKINET_IFNAME")
+    timeout = int(getconf("COINICLESNET_TIMEOUT", "5"))
+    ping_interval = int(getconf("COINICLESNET_PING_INTERVAL", "60"))
+    ping_callback = getconf("COINICLESNET_PING_URL")
+    ip = getconf("COINICLESNET_IP")
+    port = getconf("COINICLESNET_PORT")
+    ifname = getconf("COINICLESNET_IFNAME")
     if ping_callback is None:
-        print("LOKINET_PING_URL was not set")
+        print("COINICLESNET_PING_URL was not set")
         return
     conf = os.path.join(root, "daemon.ini")
     log("going up")

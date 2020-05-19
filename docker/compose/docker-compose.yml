@@ -17,7 +17,7 @@ services:
     volumes:
       - bootstrap-dir:/root/.coiniclesnet/
     environment:
-      - LOKINET_NETID=docker
+      - COINICLESNET_NETID=docker
     networks:
       testing_net:
 
@@ -42,7 +42,7 @@ services:
     volumes:
       - bootstrap-dir:/bootstrap/
     environment:
-      - LOKINET_NETID=docker
+      - COINICLESNET_NETID=docker
     networks:
       testing_net:
 
@@ -70,7 +70,7 @@ services:
     volumes:
       - bootstrap-dir:/bootstrap/
     environment:
-      - LOKINET_NETID=docker
+      - COINICLESNET_NETID=docker
     networks:
       testing_net:
 

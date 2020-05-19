@@ -3,10 +3,10 @@
 # Here we build coiniclesnet-network-control-panel into 'coiniclesnet-gui.app' in "extra/" where a postinstall
 # script will then move it to /Applications/.
 
-set(LOKINET_GUI_REPO "https://github.com/coinicles-project/coinicles-network-control-panel.git"
+set(COINICLESNET_GUI_REPO "https://github.com/coinicles-project/coinicles-network-control-panel.git"
     CACHE STRING "Can be set to override the default coiniclesnet-gui git repository")
-set(LOKINET_GUI_CHECKOUT "origin/master"
-    CACHE STRING "Can be set to specify a particular branch or tag to build from LOKINET_GUI_REPO")
+set(COINICLESNET_GUI_CHECKOUT "origin/master"
+    CACHE STRING "Can be set to specify a particular branch or tag to build from COINICLESNET_GUI_REPO")
 set(MACOS_SIGN_APP ""  # FIXME: it doesn't use a Apple Distribution key because WTF knows.
     CACHE STRING "enable codesigning of the stuff inside the .app and the coiniclesnet binary -- use a 'Apple Distribution' key (or description) from `security find-identity -v`")
 set(MACOS_SIGN_PKG ""
@@ -20,11 +20,11 @@ set(MACOS_NOTARIZE_ASC ""
 
 include(ExternalProject)
 
-message(STATUS "Building CoiniclesnetGUI.app from ${LOKINET_GUI_REPO} @ ${LOKINET_GUI_CHECKOUT}")
+message(STATUS "Building CoiniclesnetGUI.app from ${COINICLESNET_GUI_REPO} @ ${COINICLESNET_GUI_CHECKOUT}")
 
 ExternalProject_Add(coiniclesnet-gui
-    GIT_REPOSITORY "${LOKINET_GUI_REPO}"
-    GIT_TAG "${LOKINET_GUI_CHECKOUT}"
+    GIT_REPOSITORY "${COINICLESNET_GUI_REPO}"
+    GIT_TAG "${COINICLESNET_GUI_CHECKOUT}"
     CMAKE_ARGS -DMACOS_APP=ON -DCMAKE_INSTALL_PREFIX=${PROJECT_BINARY_DIR} -DMACOS_SIGN=${MACOS_SIGN_APP}
         -DCMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}
     )
@@ -50,15 +50,15 @@ install(FILES ${CMAKE_SOURCE_DIR}/contrib/macos/coiniclesnet_macos_daemon_script
 
 set(CPACK_COMPONENTS_ALL coiniclesnet gui)
 
-set(CPACK_COMPONENT_LOKINET_DISPLAY_NAME "Coiniclesnet Service")
-set(CPACK_COMPONENT_LOKINET_DESCRIPTION "Main Coiniclesnet runtime service, managed by Launchd")
+set(CPACK_COMPONENT_COINICLESNET_DISPLAY_NAME "Coiniclesnet Service")
+set(CPACK_COMPONENT_COINICLESNET_DESCRIPTION "Main Coiniclesnet runtime service, managed by Launchd")
 
 set(CPACK_COMPONENT_GUI_DISPLAY_NAME "Coiniclesnet GUI")
 set(CPACK_COMPONENT_GUI_DESCRIPTION "Small GUI which provides stats and limited runtime control of the Coiniclesnet service. Resides in the system tray.")
 
 set(CPACK_GENERATOR "productbuild")
 set(CPACK_PACKAGING_INSTALL_PREFIX "/opt/coiniclesnet")
-set(CPACK_POSTFLIGHT_LOKINET_SCRIPT ${CMAKE_SOURCE_DIR}/contrib/macos/postinstall)
+set(CPACK_POSTFLIGHT_COINICLESNET_SCRIPT ${CMAKE_SOURCE_DIR}/contrib/macos/postinstall)
 
 # The GUI is GPLv3, and so the bundled core+GUI must be as well:
 set(CPACK_RESOURCE_FILE_LICENSE "${PROJECT_SOURCE_DIR}/contrib/gpl-3.0.txt")

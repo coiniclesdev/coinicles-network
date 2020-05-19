@@ -9,7 +9,7 @@ NC='\033[0m' # No Color
 set -e
 
 helpme=
-default_mainnet=https://seeds.coinicles.tech/coiniclesnet.signed
+default_mainnet=https://site.coinicles.tech/coiniclesnet.signed
 default_testnet=https://seeds.coinicles.tech/testnet.signed
 default_dest="$HOME/.coiniclesnet/bootstrap.signed"
 

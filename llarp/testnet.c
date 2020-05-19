@@ -1,4 +1,4 @@
-#ifdef LOKINET_SHADOW
+#ifdef COINICLESNET_SHADOW
 #include <llarp.h>
 
 /** insert shadow test network specific code here */

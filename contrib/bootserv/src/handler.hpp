@@ -1,5 +1,5 @@
-#ifndef LOKINET_BOOTSERV_HANDLER_HPP
-#define LOKINET_BOOTSERV_HANDLER_HPP
+#ifndef COINICLESNET_BOOTSERV_HANDLER_HPP
+#define COINICLESNET_BOOTSERV_HANDLER_HPP
 #include <iostream>
 #include "coiniclesnet-config.hpp"
 

@@ -1,5 +1,5 @@
-#ifndef LOKINET_BOOTSERV_CONFIG_HPP
-#define LOKINET_BOOTSERV_CONFIG_HPP
+#ifndef COINICLESNET_BOOTSERV_CONFIG_HPP
+#define COINICLESNET_BOOTSERV_CONFIG_HPP
 #include <unordered_map>
 #include <string_view>
 #include <functional>

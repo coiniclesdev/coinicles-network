@@ -1,5 +1,5 @@
-#ifndef LOKINET_JNI_VPNIO_HPP
-#define LOKINET_JNI_VPNIO_HPP
+#ifndef COINICLESNET_JNI_VPNIO_HPP
+#define COINICLESNET_JNI_VPNIO_HPP
 
 #include <llarp.h>
 #include <memory>

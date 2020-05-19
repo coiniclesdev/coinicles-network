@@ -24,7 +24,7 @@ namespace llarp
   {
     std::string env;
     env.reserve(8 + suffix.size());
-    env.append("LOKINET_"s);
+    env.append("COINICLESNET_"s);
     env.append(suffix.begin(), suffix.end());
     return std::getenv(env.c_str());
   }
@@ -652,8 +652,8 @@ llarp_generic_ensure_config(std::ofstream &f, std::string basepath,
 
   f << "# system settings for privileges and such\n";
   f << "[system]\n";
-  f << "user=" << DEFAULT_LOKINET_USER << std::endl;
-  f << "group=" << DEFAULT_LOKINET_GROUP << std::endl;
+  f << "user=" << DEFAULT_COINICLESNET_USER << std::endl;
+  f << "group=" << DEFAULT_COINICLESNET_GROUP << std::endl;
   f << "pidfile=" << basepath << "coiniclesnet.pid\n";
   f << "\n\n";
 

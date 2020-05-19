@@ -1,6 +1,6 @@
 FROM compose-base:latest
 
-ENV LOKINET_NETID=docker
+ENV COINICLESNET_NETID=docker
 
 COPY ./docker/compose/bootstrap.ini /root/.coiniclesnet/coiniclesnet.ini
 

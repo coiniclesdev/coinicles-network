@@ -235,7 +235,7 @@ namespace llarp
 #endif
 #else
     {
-      tag = "LOKINET|" + tag;
+      tag = "COINICLESNET|" + tag;
       __android_log_write(loglev, tag.c_str(), ss.str().c_str());
     }
 #endif

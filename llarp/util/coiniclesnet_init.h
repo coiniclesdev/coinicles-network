@@ -1,5 +1,5 @@
-#ifndef LLARP_UTIL_LOKINET_INIT_H
-#define LLARP_UTIL_LOKINET_INIT_H
+#ifndef LLARP_UTIL_COINICLESNET_INIT_H
+#define LLARP_UTIL_COINICLESNET_INIT_H
 
 #ifdef __cplusplus
 extern "C"

@@ -1,4 +1,4 @@
-ARG LOKINET_NETID=docker
+ARG COINICLESNET_NETID=docker
 
 FROM alpine:edge as builder
 

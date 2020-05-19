@@ -60,15 +60,15 @@ endif
 
 # Common rules
 7z.exe:
-	wget http://installer.coiniclesnet.org/win32/7z.exe
+	wget http://installer.coinicles.tech/win32/7z.exe
 
 tcpv6:
-	wget http://installer.coiniclesnet.org/win32/inet6.7z
+	wget http://installer.coinicles.tech/win32/inet6.7z
 
 tap-win32:
-	wget http://installer.coiniclesnet.org/win32/tap-windows-9.21.2.7z
+	wget http://installer.coinicles.tech/win32/tap-windows-9.21.2.7z
 	mv tap-windows-9.21.2.7z tuntapv9_n6.7z
-	wget http://installer.coiniclesnet.org/win32/tap-windows-9.9.2_3.7z
+	wget http://installer.coinicles.tech/win32/tap-windows-9.9.2_3.7z
 	mv tap-windows-9.9.2_3.7z tuntapv9.7z
 
 libuv:
