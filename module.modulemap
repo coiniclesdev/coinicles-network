@@ -1,4 +1,4 @@
-module LokiNetwork {
+module CoiniclesNetwork {
   module LLARP {
     header "include/llarp.h"
     export *

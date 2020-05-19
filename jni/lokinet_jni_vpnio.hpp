@@ -8,7 +8,7 @@
 #include <algorithm>
 #include <jni.h>
 
-namespace lokinet
+namespace coiniclesnet
 {
   struct VPNIO
   {
@@ -127,9 +127,9 @@ namespace lokinet
       std::copy_n(val.data(), sz, info.ifaddr);
     }
   };
-}  // namespace lokinet
+}  // namespace coiniclesnet
 
-struct lokinet_jni_vpnio : public lokinet::VPNIO
+struct coiniclesnet_jni_vpnio : public coiniclesnet::VPNIO
 {
   void
   InjectSuccess() override

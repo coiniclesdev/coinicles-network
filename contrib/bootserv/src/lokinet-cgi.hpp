@@ -3,7 +3,7 @@
 
 #include "handler.hpp"
 
-namespace lokinet
+namespace coiniclesnet
 {
   namespace bootserv
   {
@@ -26,6 +26,6 @@ namespace lokinet
     };
 
   }  // namespace bootserv
-}  // namespace lokinet
+}  // namespace coiniclesnet
 
 #endif

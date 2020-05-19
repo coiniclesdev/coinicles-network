@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: loki-deployment
+  name: coinicles-deployment
   labels:
-    app: loki-svc-node
+    app: coinicles-svc-node
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: loki-svc-node
+      app: coinicles-svc-node
   template:
     metadata:
       labels:
-        app: loki-svc-node
+        app: coinicles-svc-node
     spec:
       containers:
-      - name: loki-svc-node
-        image: jaaff/loki-svc-kubernetes
+      - name: coinicles-svc-node
+        image: jaaff/coinicles-svc-kubernetes
         ports:
           - protocol: TCP
             port: 22022

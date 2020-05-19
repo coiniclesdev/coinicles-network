@@ -15,7 +15,7 @@ services:
       - target: 1190
         protocol: tcp
     volumes:
-      - bootstrap-dir:/root/.lokinet/
+      - bootstrap-dir:/root/.coiniclesnet/
     environment:
       - LOKINET_NETID=docker
     networks:

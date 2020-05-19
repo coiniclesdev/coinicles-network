@@ -8,13 +8,13 @@ WORKDIR /src/
 COPY . /src/
 
 RUN make NINJA=ninja STATIC_LINK=ON BUILD_TYPE=Release DOWNLOAD_SODIUM=ON
-RUN ./lokinet-bootstrap ${bootstrap}
+RUN ./coiniclesnet-bootstrap ${bootstrap}
 
 FROM alpine:latest
 
-COPY lokinet-docker.ini /root/.lokinet/lokinet.ini
-COPY --from=builder /src/build/daemon/lokinet .
-COPY --from=builder /root/.lokinet/bootstrap.signed /root/.lokinet/
+COPY coiniclesnet-docker.ini /root/.coiniclesnet/coiniclesnet.ini
+COPY --from=builder /src/build/daemon/coiniclesnet .
+COPY --from=builder /root/.coiniclesnet/bootstrap.signed /root/.coiniclesnet/
 
-CMD ["./lokinet"]
+CMD ["./coiniclesnet"]
 EXPOSE 1090/udp 1190/tcp

@@ -1,9 +1,9 @@
 #ifndef LOKINET_BOOTSERV_HANDLER_HPP
 #define LOKINET_BOOTSERV_HANDLER_HPP
 #include <iostream>
-#include "lokinet-config.hpp"
+#include "coiniclesnet-config.hpp"
 
-namespace lokinet
+namespace coiniclesnet
 {
   namespace bootserv
   {
@@ -38,6 +38,6 @@ namespace lokinet
     NewCronHandler(std::ostream& out);
 
   }  // namespace bootserv
-}  // namespace lokinet
+}  // namespace coiniclesnet
 
 #endif

@@ -1,4 +1,4 @@
 @echo off
-copy lokinet.ini lokinet.old.ini
-del lokinet.ini
-%PROGRAMFILES%\Loki Project\Lokinet\lokinet -g
+copy coiniclesnet.ini coiniclesnet.old.ini
+del coiniclesnet.ini
+%PROGRAMFILES%\Coinicles Project\Coiniclesnet\coiniclesnet -g

@@ -18,7 +18,7 @@ namespace llarp
   struct ConfigParser;
 
   inline const char*
-  lokinetEnv(string_view suffix);
+  coiniclesnetEnv(string_view suffix);
 
   std::string
   fromEnv(string_view val, string_view envNameSuffix);
@@ -202,14 +202,14 @@ namespace llarp
     fromSection(string_view key, string_view val);
   };
 
-  struct LokidConfig
+  struct CoiniclesdConfig
   {
     bool usingSNSeed         = false;
     bool whitelistRouters    = false;
     fs::path ident_keyfile   = "identity.key";
-    std::string lokidRPCAddr = "127.0.0.1:22023";
-    std::string lokidRPCUser;
-    std::string lokidRPCPassword;
+    std::string coiniclesdRPCAddr = "127.0.0.1:32023";
+    std::string coiniclesdRPCUser;
+    std::string coiniclesdRPCPassword;
 
     void
     fromSection(string_view key, string_view val);
@@ -247,7 +247,7 @@ namespace llarp
     ServicesConfig services;
     SystemConfig system;
     ApiConfig api;
-    LokidConfig lokid;
+    CoiniclesdConfig coiniclesd;
     BootstrapConfig bootstrap;
     LoggingConfig logging;
 

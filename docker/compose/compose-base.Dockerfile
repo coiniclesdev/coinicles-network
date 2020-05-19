@@ -12,5 +12,5 @@ RUN make NINJA=ninja STATIC_LINK=ON BUILD_TYPE=Release
 
 FROM alpine:latest
 
-COPY --from=builder /src/build/daemon/lokinet /
-COPY --from=builder /src/build/daemon/lokinet-ctl /
+COPY --from=builder /src/build/daemon/coiniclesnet /
+COPY --from=builder /src/build/daemon/coiniclesnet-ctl /

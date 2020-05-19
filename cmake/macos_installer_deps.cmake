@@ -1,14 +1,14 @@
 # macos specific cpack stuff goes here
 
-# Here we build lokinet-network-control-panel into 'lokinet-gui.app' in "extra/" where a postinstall
+# Here we build coiniclesnet-network-control-panel into 'coiniclesnet-gui.app' in "extra/" where a postinstall
 # script will then move it to /Applications/.
 
-set(LOKINET_GUI_REPO "https://github.com/loki-project/loki-network-control-panel.git"
-    CACHE STRING "Can be set to override the default lokinet-gui git repository")
+set(LOKINET_GUI_REPO "https://github.com/coinicles-project/coinicles-network-control-panel.git"
+    CACHE STRING "Can be set to override the default coiniclesnet-gui git repository")
 set(LOKINET_GUI_CHECKOUT "origin/master"
     CACHE STRING "Can be set to specify a particular branch or tag to build from LOKINET_GUI_REPO")
 set(MACOS_SIGN_APP ""  # FIXME: it doesn't use a Apple Distribution key because WTF knows.
-    CACHE STRING "enable codesigning of the stuff inside the .app and the lokinet binary -- use a 'Apple Distribution' key (or description) from `security find-identity -v`")
+    CACHE STRING "enable codesigning of the stuff inside the .app and the coiniclesnet binary -- use a 'Apple Distribution' key (or description) from `security find-identity -v`")
 set(MACOS_SIGN_PKG ""
     CACHE STRING "enable codesigning of the .pkg -- use a 'Developer ID Installer' key (or description) from `security find-identity -v`")
 set(MACOS_NOTARIZE_USER ""
@@ -20,9 +20,9 @@ set(MACOS_NOTARIZE_ASC ""
 
 include(ExternalProject)
 
-message(STATUS "Building LokinetGUI.app from ${LOKINET_GUI_REPO} @ ${LOKINET_GUI_CHECKOUT}")
+message(STATUS "Building CoiniclesnetGUI.app from ${LOKINET_GUI_REPO} @ ${LOKINET_GUI_CHECKOUT}")
 
-ExternalProject_Add(lokinet-gui
+ExternalProject_Add(coiniclesnet-gui
     GIT_REPOSITORY "${LOKINET_GUI_REPO}"
     GIT_TAG "${LOKINET_GUI_CHECKOUT}"
     CMAKE_ARGS -DMACOS_APP=ON -DCMAKE_INSTALL_PREFIX=${PROJECT_BINARY_DIR} -DMACOS_SIGN=${MACOS_SIGN_APP}
@@ -31,11 +31,11 @@ ExternalProject_Add(lokinet-gui
 
 
 
-install(PROGRAMS ${CMAKE_SOURCE_DIR}/contrib/macos/lokinet_uninstall.sh
+install(PROGRAMS ${CMAKE_SOURCE_DIR}/contrib/macos/coiniclesnet_uninstall.sh
         DESTINATION "bin/"
-        COMPONENT lokinet)
+        COMPONENT coiniclesnet)
 
-install(DIRECTORY ${PROJECT_BINARY_DIR}/LokinetGUI.app
+install(DIRECTORY ${PROJECT_BINARY_DIR}/CoiniclesnetGUI.app
         DESTINATION "../../Applications"
         USE_SOURCE_PERMISSIONS
         COMPONENT gui
@@ -43,21 +43,21 @@ install(DIRECTORY ${PROJECT_BINARY_DIR}/LokinetGUI.app
         )
 
 # copy files that will be later moved by the postinstall script to proper locations
-install(FILES ${CMAKE_SOURCE_DIR}/contrib/macos/lokinet_macos_daemon_script.sh
-              ${CMAKE_SOURCE_DIR}/contrib/macos/network.loki.lokinet.daemon.plist
+install(FILES ${CMAKE_SOURCE_DIR}/contrib/macos/coiniclesnet_macos_daemon_script.sh
+              ${CMAKE_SOURCE_DIR}/contrib/macos/network.coinicles.coiniclesnet.daemon.plist
         DESTINATION "extra/"
-        COMPONENT lokinet)
+        COMPONENT coiniclesnet)
 
-set(CPACK_COMPONENTS_ALL lokinet gui)
+set(CPACK_COMPONENTS_ALL coiniclesnet gui)
 
-set(CPACK_COMPONENT_LOKINET_DISPLAY_NAME "Lokinet Service")
-set(CPACK_COMPONENT_LOKINET_DESCRIPTION "Main Lokinet runtime service, managed by Launchd")
+set(CPACK_COMPONENT_LOKINET_DISPLAY_NAME "Coiniclesnet Service")
+set(CPACK_COMPONENT_LOKINET_DESCRIPTION "Main Coiniclesnet runtime service, managed by Launchd")
 
-set(CPACK_COMPONENT_GUI_DISPLAY_NAME "Lokinet GUI")
-set(CPACK_COMPONENT_GUI_DESCRIPTION "Small GUI which provides stats and limited runtime control of the Lokinet service. Resides in the system tray.")
+set(CPACK_COMPONENT_GUI_DISPLAY_NAME "Coiniclesnet GUI")
+set(CPACK_COMPONENT_GUI_DESCRIPTION "Small GUI which provides stats and limited runtime control of the Coiniclesnet service. Resides in the system tray.")
 
 set(CPACK_GENERATOR "productbuild")
-set(CPACK_PACKAGING_INSTALL_PREFIX "/opt/lokinet")
+set(CPACK_PACKAGING_INSTALL_PREFIX "/opt/coiniclesnet")
 set(CPACK_POSTFLIGHT_LOKINET_SCRIPT ${CMAKE_SOURCE_DIR}/contrib/macos/postinstall)
 
 # The GUI is GPLv3, and so the bundled core+GUI must be as well:
@@ -67,9 +67,9 @@ set(CPACK_PRODUCTBUILD_IDENTITY_NAME "${MACOS_SIGN_PKG}")
 
 if(MACOS_SIGN_APP)
     add_custom_target(sign ALL
-        echo "Signing lokinet and lokinetctl binaries"
-        COMMAND codesign -s "${MACOS_SIGN_APP}" --strict --options runtime --force -vvv $<TARGET_FILE:lokinet> $<TARGET_FILE:lokinetctl>
-        DEPENDS lokinet lokinetctl
+        echo "Signing coiniclesnet and coiniclesnetctl binaries"
+        COMMAND codesign -s "${MACOS_SIGN_APP}" --strict --options runtime --force -vvv $<TARGET_FILE:coiniclesnet> $<TARGET_FILE:coiniclesnetctl>
+        DEPENDS coiniclesnet coiniclesnetctl
         )
 endif()
 

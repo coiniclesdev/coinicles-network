@@ -1,11 +1,11 @@
-#include "network_loki_lokinet_LokinetConfig.h"
+#include "network_coinicles_coiniclesnet_CoiniclesnetConfig.h"
 #include <llarp.hpp>
-#include "lokinet_jni_common.hpp"
+#include "coiniclesnet_jni_common.hpp"
 
 extern "C"
 {
   JNIEXPORT jobject JNICALL
-  Java_network_loki_lokinet_LokinetConfig_Obtain(JNIEnv* env, jclass)
+  Java_network_coinicles_coiniclesnet_CoiniclesnetConfig_Obtain(JNIEnv* env, jclass)
   {
     llarp_config* conf = llarp_default_config();
     if(conf == nullptr)
@@ -14,13 +14,13 @@ extern "C"
   }
 
   JNIEXPORT void JNICALL
-  Java_network_loki_lokinet_LokinetConfig_Free(JNIEnv* env, jclass, jobject buf)
+  Java_network_coinicles_coiniclesnet_CoiniclesnetConfig_Free(JNIEnv* env, jclass, jobject buf)
   {
     llarp_config_free(FromBuffer< llarp_config >(env, buf));
   }
 
   JNIEXPORT jboolean JNICALL
-  Java_network_loki_lokinet_LokinetConfig_Load(JNIEnv* env, jobject self,
+  Java_network_coinicles_coiniclesnet_CoiniclesnetConfig_Load(JNIEnv* env, jobject self,
                                                jstring fname)
   {
     llarp_config* conf = GetImpl< llarp_config >(env, self);

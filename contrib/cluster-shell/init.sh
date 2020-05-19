@@ -1,9 +1,9 @@
 #!/bin/sh
-# copy a lokinet binary into this cluster
-cp ../../lokinet .
+# copy a coiniclesnet binary into this cluster
+cp ../../coiniclesnet .
 # generate default config file
-./lokinet -g -r lokinet.ini
+./coiniclesnet -g -r coiniclesnet.ini
 # make seed node
 ./makenode.sh 1
 # establish bootstrap
-ln -s loki1/self.signed bootstrap.signed
+ln -s coinicles1/self.signed bootstrap.signed

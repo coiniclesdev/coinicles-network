@@ -1,6 +1,6 @@
-#include "lokinet-cron.hpp"
+#include "coiniclesnet-cron.hpp"
 
-namespace lokinet
+namespace coiniclesnet
 {
   namespace bootserv
   {
@@ -34,4 +34,4 @@ namespace lokinet
     }
 
   }  // namespace bootserv
-}  // namespace lokinet
+}  // namespace coiniclesnet

@@ -1,9 +1,9 @@
-package network.loki.lokinet;
+package network.coinicles.coiniclesnet;
 
 
 import android.net.VpnService;
 
-public class LokinetService extends VpnService
+public class CoiniclesnetService extends VpnService
 {
     
 }

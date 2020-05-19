@@ -1,7 +1,7 @@
 #include <napi.h>
 #include <llarp.hpp>
 
-struct Lokinet : public Napi::ObjectWrap< Lokinet >
+struct Coiniclesnet : public Napi::ObjectWrap< Coiniclesnet >
 {
   llarp::Context ctx;
 
@@ -11,15 +11,15 @@ struct Lokinet : public Napi::ObjectWrap< Lokinet >
     Napi::HandleScope scope(env);
 
     Napi::Function func =
-        DefineClass(env, "Lokinet",
-                    {InstanceMethod("configure", &Lokinet::Configure),
-                     InstanceMethod("run", &Lokient::Run),
-                     InstanceMethod("kill", &Lokinet::Kill)});
+        DefineClass(env, "Coiniclesnet",
+                    {InstanceMethod("configure", &Coiniclesnet::Configure),
+                     InstanceMethod("run", &Coiniclesent::Run),
+                     InstanceMethod("kill", &Coiniclesnet::Kill)});
 
     constructor = Napi::Persistent(func);
     constructor.SuppressDestruct();
 
-    exports.Set("Lokinet", func);
+    exports.Set("Coiniclesnet", func);
     return exports;
   };
 
@@ -56,7 +56,7 @@ struct Lokinet : public Napi::ObjectWrap< Lokinet >
 Napi::Object
 InitAll(Napi::Env env, Napi::Object exports)
 {
-  return Lokinet::Init(env, exports);
+  return Coiniclesnet::Init(env, exports);
 }
 
 NODE_API_MODULE(addon, InitAll)

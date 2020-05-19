@@ -13,17 +13,17 @@
 
 #ifdef DEBIAN
 #ifndef DEFAULT_LOKINET_USER
-#define DEFAULT_LOKINET_USER "debian-lokinet"
+#define DEFAULT_LOKINET_USER "debian-coiniclesnet"
 #endif
 #ifndef DEFAULT_LOKINET_GROUP
-#define DEFAULT_LOKINET_GROUP "debian-lokinet"
+#define DEFAULT_LOKINET_GROUP "debian-coiniclesnet"
 #endif
 #else
 #ifndef DEFAULT_LOKINET_USER
-#define DEFAULT_LOKINET_USER "lokinet"
+#define DEFAULT_LOKINET_USER "coiniclesnet"
 #endif
 #ifndef DEFAULT_LOKINET_GROUP
-#define DEFAULT_LOKINET_GROUP "lokinet"
+#define DEFAULT_LOKINET_GROUP "coiniclesnet"
 #endif
 #endif
 

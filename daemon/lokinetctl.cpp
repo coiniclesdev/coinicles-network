@@ -109,8 +109,8 @@ namespace
 int
 main(int argc, char* argv[])
 {
-  cxxopts::Options options("lokinetctl",
-                           "LokiNET is a free, open source, private, "
+  cxxopts::Options options("coiniclesnetctl",
+                           "CoiniclesNET is a free, open source, private, "
                            "decentralized, \"market based sybil resistant\" "
                            "and IP based onion routing network");
 

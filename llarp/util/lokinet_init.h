@@ -6,17 +6,17 @@ extern "C"
 {
 #endif
 
-#ifndef Lokinet_INIT
+#ifndef Coiniclesnet_INIT
 #if defined(_WIN32)
-#define Lokinet_INIT \
+#define Coiniclesnet_INIT \
   DieInCaseSomehowThisGetsRunInWineButLikeWTFThatShouldNotHappenButJustInCaseHandleItWithAPopupOrSomeShit
 #else
-#define Lokinet_INIT _lokinet_non_shit_platform_INIT
+#define Coiniclesnet_INIT _coiniclesnet_non_shit_platform_INIT
 #endif
 #endif
 
   int
-  Lokinet_INIT(void);
+  Coiniclesnet_INIT(void);
 
 #ifdef __cplusplus
 }

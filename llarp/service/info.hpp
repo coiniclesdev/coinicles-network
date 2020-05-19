@@ -70,7 +70,7 @@ namespace llarp
       std::ostream&
       print(std::ostream& stream, int level, int spaces) const;
 
-      /// .loki address
+      /// .coinicles address
       std::string
       Name() const;
 

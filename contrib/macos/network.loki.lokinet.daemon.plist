@@ -3,28 +3,28 @@
 <plist version="1.0">
 <dict>
 	<key>Label</key>
-	<string>network.loki.lokinet.daemon</string>
+	<string>network.coinicles.coiniclesnet.daemon</string>
 
 	<key>ProgramArguments</key>
 	<array>
-		<string>/var/lib/lokinet/lokinet_macos_daemon_script.sh</string>
+		<string>/var/lib/coiniclesnet/coiniclesnet_macos_daemon_script.sh</string>
 	</array>
 
-	<!-- Keep Lokinet alive unless magic file exists -->
+	<!-- Keep Coiniclesnet alive unless magic file exists -->
 	<key>KeepAlive</key>
 	<dict>
 		<key>PathState</key>
 		<dict>
-			<key>/var/lib/lokinet/suspend-launchd-service</key>
+			<key>/var/lib/coiniclesnet/suspend-launchd-service</key>
 			<false/>
 		</dict>
 	</dict>
 
 	<key>StandardOutPath</key>
-    <string>/var/lib/lokinet/stdout</string>
+    <string>/var/lib/coiniclesnet/stdout</string>
 
     <key>StandardErrorPath</key>
-    <string>/var/lib/lokinet/stderr</string>
+    <string>/var/lib/coiniclesnet/stderr</string>
 	
 </dict>
 </plist>

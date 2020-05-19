@@ -1,4 +1,4 @@
-package network.loki.lokinet;
+package network.coinicles.coiniclesnet;
 
 import android.app.ActionBar;
 import android.content.Intent;

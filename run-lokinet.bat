@@ -1,8 +1,8 @@
 REM set up config
-lokinet -g
+coiniclesnet -g
 
 REM bootstrap network
-lokinet-bootstrap
+coiniclesnet-bootstrap
 
-REM run lokinet
-lokinet
+REM run coiniclesnet
+coiniclesnet

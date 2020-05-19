@@ -6,7 +6,7 @@
 #include <memory>
 #include <vector>
 
-namespace lokinet
+namespace coiniclesnet
 {
   namespace bootserv
   {
@@ -42,6 +42,6 @@ namespace lokinet
       Config_impl_t m_Config;
     };
   }  // namespace bootserv
-}  // namespace lokinet
+}  // namespace coiniclesnet
 
 #endif

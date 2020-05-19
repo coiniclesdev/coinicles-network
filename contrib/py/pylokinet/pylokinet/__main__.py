@@ -1,4 +1,4 @@
 #!/usr/bin/env python3
 
-from pylokinet.instance import main 
+from pycoiniclesnet.instance import main 
 main()

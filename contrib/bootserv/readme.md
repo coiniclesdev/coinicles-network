@@ -1,4 +1,4 @@
-# lokinet-bootserv
+# coiniclesnet-bootserv
 
 cgi executable for serving a random RC for bootstrap from a nodedb
 
@@ -6,7 +6,7 @@ cgi executable for serving a random RC for bootstrap from a nodedb
 
 copy the example config (privileged)
 
-    # cp configs/lokinet-bootserv.ini /usr/local/etc/lokinet-bootserv.ini
+    # cp configs/coiniclesnet-bootserv.ini /usr/local/etc/coiniclesnet-bootserv.ini
     
 edit config to have proper values, 
 specifically  make sure the `[nodedb]` section has a `dir` value that points to a static copy of a healthy nodedb
@@ -21,15 +21,15 @@ to build:
 
 install cgi binary:
 
-    # cp lokinet-bootserv /usr/local/bin/lokinet-bootserv 
+    # cp coiniclesnet-bootserv /usr/local/bin/coiniclesnet-bootserv 
 
 set up with nginx cgi:
 
-    # cp configs/lokinet-bootserv-nginx.conf /etc/nginx/sites-available/lokinet-bootserv.conf
-    # ln -s /etc/nginx/sites-available/lokinet-bootserv.conf /etc/nginx/sites-enabled/ 
+    # cp configs/coiniclesnet-bootserv-nginx.conf /etc/nginx/sites-available/coiniclesnet-bootserv.conf
+    # ln -s /etc/nginx/sites-available/coiniclesnet-bootserv.conf /etc/nginx/sites-enabled/ 
 
 ## maintainence
 
 add the following to crontab
 
-    0 0 * * * /usr/local/bin/lokinet-bootserv --cron
+    0 0 * * * /usr/local/bin/coiniclesnet-bootserv --cron

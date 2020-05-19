@@ -7,9 +7,9 @@ import time
 import threading
 import os
 
-lib_file = os.path.join(os.path.realpath('.'), 'liblokinet.so')
+lib_file = os.path.join(os.path.realpath('.'), 'libcoiniclesnet.so')
 
-class LokiNET(threading.Thread):
+class CoiniclesNET(threading.Thread):
 
     lib = None
     ctx = None
@@ -22,12 +22,12 @@ class LokiNET(threading.Thread):
 
     def inform_fail(self):
         """
-        inform lokinet crashed
+        inform coiniclesnet crashed
         """
 
     def inform_end(self):
         """
-        inform lokinet ended clean
+        inform coiniclesnet ended clean
         """
 
 
@@ -48,19 +48,19 @@ class LokiNET(threading.Thread):
             self.lib.llarp_main_free(self.ctx)
 
 def main():
-    loki = LokiNET()
-    if loki.load(lib_file, b'daemon.ini'):
-        if loki.configure():
-            loki.start()
+    coinicles = CoiniclesNET()
+    if coinicles.load(lib_file, b'daemon.ini'):
+        if coinicles.configure():
+            coinicles.start()
         else:
-            print("failed to configure lokinet context")
+            print("failed to configure coiniclesnet context")
         try:
             while True:
                 time.sleep(1)
         except KeyboardInterrupt:
             llarp.signal(signal.SIGINT)
         finally:
-            loki.close()
+            coinicles.close()
             return
 
 
